@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Bodoni Moda', serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(bday.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Container to wrap everything */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 1000px;
+}
+
+/* Birthday Card */
+.card {
+    width: 80%; 
+    max-width: 280px;
+    height: 360px;
+    transition: 2s;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+/* Inside & Outside styles */
+.outside,
+.inside {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.outside {
+    background-color: blanchedalmond;
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.inside {
+    background-color: rgb(255, 244, 79);
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
+    transform: rotateY(180deg);
+}
+
+/* Frames Section */
+.block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+/* Individual frames */
+.frames {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.5);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.frames:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.8);
+}
+
+.frames img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.frames p {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Background colors for frames */
+.frames:nth-child(1) {
+    background-color: rgb(203, 80, 255);
+}
+
+.frames:nth-child(2) {
+    background-color: rgb(193, 218, 32);
+}
+
+.frames:nth-child(3) {
+    background-color: rgb(135, 180, 222);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .card {
+        width: 90%;
+        height: 300px;
+    }
+
+    .frames img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .frames p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        width: 95%;
+        height: 250px;
+    }
+
+    .frames {
+        width: 90%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .frames img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .frames p {
+        font-size: 0.8rem;
+    }
+}
